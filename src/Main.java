@@ -6,6 +6,11 @@ public class Main
 
     }
 
+    public static String translateWords(String input)
+    {
+        return input;
+    }
+
     public static String translateWord(String input)
     {
         int position = -5;
