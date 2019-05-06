@@ -39,21 +39,20 @@ public class Main
             return input + "way";
         }
 
-        if(hasUpperCase == true) {
-            if (hasUpperCase)
-            {
-                char[] c = input.toCharArray();
-                Character.toLowerCase(c[upperCasePosition]);
-            }
 
-            String a = input.substring(position);
-            String b = input.substring(0, position);
-
-
-
-
-
+        if (hasUpperCase)
+        {
+            char[] c = input.toCharArray();
+            Character.toUpperCase(c[upperCasePosition]);
+            Character.toLowerCase(c[0]);
+            input = c.toString();
         }
+
+
+        String a = input.substring(position);
+        String b = input.substring(0, position);
+
+        return a + b + "ay";
 
     }
 
