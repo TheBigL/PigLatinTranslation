@@ -13,9 +13,10 @@ public class Main
 
     public static String translateWord(String input)
     {
-        int position = -5;
+        int position = -1;
         int upperCasePosition = -1;
         boolean hasUpperCase = false;
+        boolean containsPunctuationMark = false;
 
 
         for(int i = 0; i < input.length(); i++)
@@ -27,12 +28,23 @@ public class Main
 
             }
 
+
+
             if(isVowel(input.charAt(i)))
             {
                 position = i;
                 break;
             }
         }
+
+        if(isNotCharacter(input.charAt(input.length())))
+        {
+            containsPunctuationMark = true;
+        }
+
+
+
+
 
         if(position == 0)
         {
@@ -46,6 +58,11 @@ public class Main
             Character.toUpperCase(c[upperCasePosition]);
             Character.toLowerCase(c[0]);
             input = c.toString();
+        }
+
+        if(containsPunctuationMark)
+        {
+
         }
 
 
@@ -77,5 +94,18 @@ public class Main
 
         else
             return false;
+    }
+
+    public static boolean isNotCharacter(char letter)
+    {
+        if(Character.isLetter(letter))
+        {
+            return false;
+        }
+
+        else
+        {
+            return true;
+        }
     }
 }
