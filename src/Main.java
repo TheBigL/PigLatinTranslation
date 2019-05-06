@@ -14,7 +14,7 @@ public class Main
     public static String translateWord(String input)
     {
         int position = -5;
-        int upperCasePosition = 0;
+        int upperCasePosition = -1;
         boolean hasUpperCase = false;
 
 
@@ -39,8 +39,19 @@ public class Main
             return input + "way";
         }
 
-        if(hasUpperCase == true)
-        {
+        if(hasUpperCase == true) {
+            if (hasUpperCase)
+            {
+                char[] c = input.toCharArray();
+                Character.toLowerCase(c[upperCasePosition]);
+            }
+
+            String a = input.substring(position);
+            String b = input.substring(0, position);
+
+
+
+
 
         }
 
