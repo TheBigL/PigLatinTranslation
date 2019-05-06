@@ -14,10 +14,19 @@ public class Main
     public static String translateWord(String input)
     {
         int position = -5;
+        int upperCasePosition = 0;
+        boolean hasUpperCase = false;
 
 
         for(int i = 0; i < input.length(); i++)
         {
+            if(isUpperCase(input.charAt(i)))
+            {
+                hasUpperCase = true;
+                upperCasePosition = i;
+
+            }
+
             if(isVowel(input.charAt(i)))
             {
                 position = i;
@@ -28,6 +37,11 @@ public class Main
         if(position == 0)
         {
             return input + "way";
+        }
+
+        if(hasUpperCase == true)
+        {
+
         }
 
     }
@@ -42,5 +56,16 @@ public class Main
 
             else
                 return false;
+    }
+
+    public static boolean isUpperCase(char letter)
+    {
+        if(Character.isUpperCase(letter))
+        {
+            return true;
+        }
+
+        else
+            return false;
     }
 }
